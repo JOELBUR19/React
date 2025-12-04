@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment';
 export interface User {
   id: number;
   name: string;
@@ -9,7 +9,8 @@ export interface User {
 @Injectable({ providedIn: 'root' })
 export class ApiService {
   private http = inject(HttpClient);
-  private baseUrl = 'http://localhost:3401/api'; // p. ej.
+  private baseUrl = environment.apiUrl;
+
   getUsers() {
     return this.http.get<User[]>(`${this.baseUrl}/users`);
   }
