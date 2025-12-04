@@ -8,11 +8,13 @@ import { VariablesOps } from "./modules/VariablesOps";
 import { DecisionDemo } from "./modules/DecisionDemo";
 import { LoopsDemo } from "./modules/LoopsDemo";
 import ArithmeticOps from "./modules/ArithmeticOps";
+import RoomPricing from "./modules/RoomPricing";
 
 export function Home() {
   return (
     <div>
       <Navbar />
+
       <section id="home" className="container" style={{ paddingTop: 16 }}>
         <h2>Componentes y demos listos</h2>
         <p>
@@ -26,28 +28,13 @@ export function Home() {
       <section id="cards" className="container" style={{ paddingTop: 16 }}>
         <h2>Cards</h2>
         <div className="cards">
-          <Card
-            title="Rendimiento"
-            description="Vite + HMR + DX rápida"
-            cta="Ver más"
-          />
-          <Card
-            title="Tipado fuerte"
-            description="TypeScript estricto para menos bugs"
-            cta="Ver más"
-          />
-          <Card
-            title="UI limpia"
-            description="Componentes reutilizables y accesibles"
-            cta="Ver más"
-          />
+          <Card title="Rendimiento" description="Vite + HMR + DX rápida" cta="Ver más" />
+          <Card title="Tipado fuerte" description="TypeScript estricto para menos bugs" cta="Ver más" />
+          <Card title="UI limpia" description="Componentes reutilizables y accesibles" cta="Ver más" />
         </div>
       </section>
 
-      <section
-        className="container"
-        style={{ paddingTop: 16, display: "grid", gap: 16 }}
-      >
+      <section className="container" style={{ paddingTop: 16, display: "grid", gap: 16 }}>
         <VariablesOps />
         <DecisionDemo />
         <LoopsDemo />
@@ -64,6 +51,12 @@ export function Home() {
           ]}
         />
       </section>
+
+      <section id="room-pricing" className="container" style={{ paddingTop: 16 }}>
+        <h2>Precios del Hotel Trivago</h2>
+        <RoomPricing />
+      </section>
+
       <Footer />
     </div>
   );
